@@ -1,10 +1,10 @@
 import { DefaultFallback } from "../defaults/defaults";
 import React from 'react';
-import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
+import * as CustomNotyf from "../defaults/notyfSetup";
 
 export default class ErrorBoundary extends React.Component {
-  notyf = new Notyf();
+  notyf = CustomNotyf.default;
   constructor(props) {
     super(props);
     this.state = { hasError: false };
@@ -16,9 +16,7 @@ export default class ErrorBoundary extends React.Component {
   }
 
   componentDidMount() {
-    if(this.state.hasError) {
-      this.notyf.error("Error");
-    }
+    this.notyf.error("Error");
   }
 
   componentWillUnmount() {
