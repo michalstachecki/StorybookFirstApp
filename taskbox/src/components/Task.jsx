@@ -1,7 +1,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import ErrorBoundary from './ErrorBoundary';
 
 export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
   return (

@@ -16,7 +16,9 @@ export default class ErrorBoundary extends React.Component {
   }
 
   componentDidMount() {
-    this.notyf.error("Error");
+    if(this.state.hasError) {
+      this.notyf.error("Error");
+    }
   }
 
   componentWillUnmount() {

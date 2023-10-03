@@ -1,5 +1,4 @@
 import Bad from "./Bad";
-import ErrorBoundary from "./ErrorBoundary";
 
 export default {
     component: Bad,

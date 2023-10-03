@@ -2,7 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Task from './Task';
-import ErrorBoundary from './ErrorBoundary';
 
 export default function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
   const events = {
