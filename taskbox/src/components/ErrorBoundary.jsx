@@ -4,7 +4,6 @@ import 'notyf/notyf.min.css';
 import * as CustomNotyf from "../defaults/notyfSetup";
 
 export default class ErrorBoundary extends React.Component {
-  notyf = CustomNotyf.default;
   constructor(props) {
     super(props);
     this.state = { hasError: false };
@@ -21,11 +20,11 @@ export default class ErrorBoundary extends React.Component {
 
   onReloadClick = () => {
     this.dismissAllNotifications();
-    this.notyf.success("Reload clicked");
+    CustomNotyf.default.success("Reload clicked");
   }
 
   dismissAllNotifications = () => {
-    this.notyf.dismissAll();
+    CustomNotyf.default.dismissAll();
   }
 
   render() {

@@ -9,4 +9,4 @@ export default {
 export const Test = {
     args: {
     },
-  };
+};

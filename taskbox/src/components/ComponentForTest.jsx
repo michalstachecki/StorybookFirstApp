@@ -8,7 +8,7 @@ export default function ComponentForTest() {
 
     return (<>
         <button role="button" name="TestButton" onClick={onClick}>Click for test</button>
-        <br/>
+        <br />
         {isTextDisplayed && <label>Text Displayed</label>}
     </>)
 }
