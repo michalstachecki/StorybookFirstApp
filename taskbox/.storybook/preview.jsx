@@ -1,4 +1,5 @@
 
+import { withRouter, reactRouterParameters } from 'storybook-addon-react-router-v6';
 import ErrorBoundary from '../src/components/ErrorBoundary';
 import '../src/index.css';
 
@@ -17,6 +18,7 @@ const preview = {
 };
 
 export const decorators = [
+  withRouter,
   (Story) => {
     return (
       <span>
