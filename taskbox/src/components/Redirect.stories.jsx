@@ -30,7 +30,8 @@ export const Default = {
 
 export const RedicectPage = {
     args: {
-        isRedirect: true
+        isRedirect: true,
+        index: 1
     },
     parameters: {
         reactRouter: reactRouterParameters({
@@ -46,7 +47,8 @@ export const RedicectPage = {
 
 export const RedicectPage2 = {
     args: {
-        isRedirect: true
+        isRedirect: true,
+        index: 2
     },
     parameters: {
         reactRouter: reactRouterParameters({
