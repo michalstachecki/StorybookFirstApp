@@ -1,17 +1,13 @@
-export default function RedirectComponent({isRedirect, index}) {
-    const onRedirectClick = ($event, index) => {
-        $event.preventDefault();
-        alert(index);
-    } 
+import { useLocation } from "react-router-dom"
+
+export default function RedirectComponent() {
+    const location = useLocation();
+
+    const getContent = () => {
+        return location.state.index ? `Redirect Page ${location.state.index}` : `Main Page`;
+    }
 
     return (<>
-        {!isRedirect && 
-        <div>
-            <button role="button" name="Redirect" onClick={($event) => onRedirectClick($event, 1)}>Click for Redirect to page 1</button>
-            <br/>
-            <button role="button" name="Redirect2" onClick={($event) => onRedirectClick($event, 2)}>Click for Redirect to page 2</button>
-        </div>
-        }
-        {isRedirect && <div>Redirected Page {index}</div>}
+        <p>{getContent()}</p>
     </>)
 }

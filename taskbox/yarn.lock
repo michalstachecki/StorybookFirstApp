@@ -7525,7 +7525,7 @@
   dependencies:
     "lodash" "^4.17.21"
 
-"react-router-dom@^6.4.0":
+"react-router-dom@^6.20.1", "react-router-dom@^6.4.0":
   "integrity" "sha512-npzfPWcxfQN35psS7rJgi/EW0Gx6EsNjfdJSAk73U/HqMEJZ2k/8puxfwHFgDQhBGmS3+sjnGbMdMSV45axPQw=="
   "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.20.1.tgz"
   "version" "6.20.1"

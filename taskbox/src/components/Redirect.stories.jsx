@@ -1,63 +1,52 @@
-import Redirect from "./Redirect";
-import { reactRouterParameters } from "storybook-addon-react-router-v6";
+import RedirectComponent from "./Redirect";
+import { reactRouterParameters, reactRouterOutlets } from "storybook-addon-react-router-v6";
+import { Link, Outlet } from "react-router-dom";
 
+const routingPath = "/redirect/:pageId";
 export default {
-    component: Redirect,
+    component: RedirectComponent,
     title: 'Redirect',
-    tags: ['autodocs'],
     reactRouter: reactRouterParameters({
-        routing: {
-            path: '/redirect/:pageId'
-        },
+        routing: routingPath
     }),
 };
 
 export const Default = {
-    args: {
-        isRedirect: false,
-    },
     parameters: {
         reactRouter: reactRouterParameters({
             location: {
                 pathParams: { pageId: '1' },
+                state: { index: 0 }
             },
-            routing: {
-                path: '/redirect/:pageId'
-            }
+            routing: reactRouterOutlets([
+                {
+                    path: '/',
+                    element: <RedirectComponent />,
+                },
+                {
+                    path: '/redirect/2',
+                    element: <RedirectComponent />,
+                },
+                {
+                    path: '/redirect/3',
+                    element: <RedirectComponent />,
+                },
+            ]),
         }),
+    },
+    render: () => {
+        return (
+            <section>
+                <ul>
+                    <Link to="/" state={{ index: 0 }}>Main page</Link>
+                    <br/>
+                    <Link to="/redirect/2" state={{ index: 1 }}>Redirect to page</Link>
+                    <br />
+                    <Link to="/redirect/3" state={{ index: 2 }}>Redirect to page 2</Link>
+                    <br />
+                </ul>
+                <Outlet />
+            </section>
+        )
     }
 };
-
-export const RedicectPage = {
-    args: {
-        isRedirect: true,
-        index: 1
-    },
-    parameters: {
-        reactRouter: reactRouterParameters({
-            location: {
-                pathParams: { pageId: '2' },
-            },
-            routing: {
-                path: '/redirect/:pageId'
-            }
-        }),
-    }
-}
-
-export const RedicectPage2 = {
-    args: {
-        isRedirect: true,
-        index: 2
-    },
-    parameters: {
-        reactRouter: reactRouterParameters({
-            location: {
-                pathParams: { pageId: '3' },
-            },
-            routing: {
-                path: '/redirect/:pageId'
-            }
-        }),
-    }
-}
