@@ -21,15 +21,15 @@ export const Default = {
             routing: reactRouterOutlets([
                 {
                     path: '/',
-                    element: <RedirectComponent />,
+                    element: <RedirectComponent content={<p>Main Page Content</p>}/>,
                 },
                 {
                     path: '/redirect/2',
-                    element: <RedirectComponent />,
+                    element: <RedirectComponent content={<p>Page 1 Content</p>}/>,
                 },
                 {
                     path: '/redirect/3',
-                    element: <RedirectComponent />,
+                    element: <RedirectComponent content={<p>Page 2 Content</p>}/>,
                 },
             ]),
         }),
